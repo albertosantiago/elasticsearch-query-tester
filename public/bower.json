@@ -1,0 +1,20 @@
+{
+  "name": "elasticsearch-tester",
+  "description": "Testing for elasticsearch queries",
+  "main": "tester.js",
+  "authors": [
+    "chucho <chucho@wetdog.co>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-jsonview": "^1.2.3"
+  }
+}

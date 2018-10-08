@@ -1,0 +1,86 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/bower_components/jquery-jsonview/dist/jquery.jsonview.css" />
+<style>
+h1{
+    font-family:Georgia;
+    font-size:32px;
+}
+h2{
+    font-size:21px;
+}
+
+</style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>ElasticSearch Query Tester</h1>
+        </div>
+        <div class="col-md-6" style="text-align:right;padding-top:20px">
+            Saved Queries:&nbsp;&nbsp;<select  style="display:inline" id="query-selector" ></select>
+            <button style="display:inline" onclick="removeQuery()"><span class="glyphicon glyphicon-remove"></span></button>
+            <button style="display:inline" onclick="loadQuery()"><span class="glyphicon glyphicon-edit"></span></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Url</h2>
+            <p>
+                <input type="text" name="url" id="url" style="width:45%" />
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <!--<button class="pull-right"><span class="glyphicon glyphicon-new-window"></span></button>-->
+            <h2>JSON Query</h2>
+            <div id="query" style="font-size:1.2em;width:100%;height:400px;"></div>
+        </div>
+        <div class="col-md-6">
+            <button class="pull-right" onclick="cleanResults()">Clean</button>
+            <h2>Server Response</h2>
+            <div id="response" style="font-family:Ubuntu;width:100%;height:400px;overflow:scroll;background-color:#f3f3f3;border:1px solid #878787">
+                <p style="padding:20px;">Haz alguna query</p>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="go">Go</button>
+            <button id="save" data-toggle="modal" data-target="#save-form">Save Query</button>
+            <button id="convert">Convert to PHP</button>
+        </div>
+    </div>
+    <br/>
+</div>
+
+<div class="modal fade" id="save-form" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" style="display:none;">
+  <div class="modal-dialog" role="document" style="width:300px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Query Name</h4>
+      </div>
+      <div class="modal-body">
+          <input type="text" id="query-name" style="width:100%;"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="saveRequest()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="client.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/bower_components/jquery-jsonview/dist/jquery.jsonview.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/g/ace@1.2.4(min/ace.js+min/mode-json.js)"></script>
+</body>
+</html>
